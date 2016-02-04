@@ -1,0 +1,64 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+.nav-logo {
+	float: left;
+	margin-top: 1rem;
+}
+.top-nav .links {
+	float: right;
+	margin-top: 1.5rem;
+	-webkit-font-smoothing: antialiased;
+}
+.top-nav .links li{
+	display: inline-block;
+	margin-left: 25px;
+}
+.top-nav {
+	background-color: #fff;
+	position: fixed;
+	width: 100%;
+	z-index: 9999;
+	padding: 0rem 2rem;
+}
+.introduction {
+	background-image: url("../images/nicole-background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+	height: 45.938rem;
+	color: white;
+	text-align: center;
+	padding: 12.5rem 0rem;
+	background-color: black;
+}
+.introduction, .portfolio {
+	text-align: center;
+}
+.accent {
+	color: lightblue;
+	font-weight: bold;
+}
+.projects li {
+	display: inline-block;
+	width: 20rem;
+	height: 20rem;
+	float: left;
+	margin: 1rem;
+}
+.projects {
+	margin: 0px auto;
+}
+.project{
+	width: 100%;
+	}
+.project1 {
+	background-image: url("../images/times.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 20rem;
+	height: 20rem;
+}
