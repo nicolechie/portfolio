@@ -29,36 +29,74 @@ html {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center bottom;
-	height: 45.938rem;
+	height: 40rem;
 	color: white;
 	text-align: center;
-	padding: 12.5rem 0rem;
+	padding: 16rem 0rem;
 	background-color: black;
 }
 .introduction, .portfolio {
 	text-align: center;
 }
-.accent {
+.accent, .links a:hover {
 	color: lightblue;
 	font-weight: bold;
+  font-size: 1.25em;
 }
-.projects li {
+.links a{
+  color: black;
+}
+a {
+  text-decoration: none;
+
+}
+ul.projects li {
 	display: inline-block;
-	width: 20rem;
-	height: 20rem;
-	float: left;
+	width: 33%;
+  min-width: 18rem;
+  max-width: 21rem;
 	margin: 1rem;
 }
-.projects {
+ul.projects {
 	margin: 0px auto;
+	padding: 0px;
 }
 .project{
 	width: 100%;
+	padding: 1rem;
+	border: 1px solid black;
 	}
-.project1 {
-	background-image: url("../images/times.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	width: 20rem;
-	height: 20rem;
+.portfolio {
+	width: 100%;
+	padding: 0px 2rem;
+}
+.content-footer {
+	margin-top: 5em;
+	padding: 4em 0;
+	background-color: black;
+  text-align: center;
+  color: #fff;
+}
+
+.content-footer > p {
+  color: white;
+}
+
+.social {
+	padding: 0;
+	list-style: none;
+}
+
+.social > li {
+	display: inline-block;
+	margin-right: .75em;
+  margin-left: .75em
+}
+.name {
+  font-size: 4rem;
+  margin: -2rem;
+}
+.header {
+  font-size: 2em;
+  margin-top: 4rem;
 }
