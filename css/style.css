@@ -1,16 +1,18 @@
 html {
-  box-sizing: border-box;
+  	box-sizing: border-box;
 }
 *, *:before, *:after {
-  box-sizing: inherit;
+  	box-sizing: inherit;
+}
+body {
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
 }
 .nav-logo {
 	float: left;
-	margin-top: 1rem;
 }
 .top-nav .links {
 	float: right;
-	margin-top: 1.5rem;
 	-webkit-font-smoothing: antialiased;
 }
 .top-nav .links li{
@@ -22,14 +24,17 @@ html {
 	position: fixed;
 	width: 100%;
 	z-index: 9999;
-	padding: 0rem 2rem;
+	padding: 1rem 4rem;
+	box-shadow: 0px 1px 5px grey;
+}
+.intro {
+	font-size: 1.5em;
 }
 .introduction {
 	background-image: url("../images/nicole-background.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center bottom;
-	height: 40rem;
 	color: white;
 	text-align: center;
 	padding: 16rem 0rem;
@@ -38,34 +43,44 @@ html {
 .introduction, .portfolio {
 	text-align: center;
 }
+.name {
+  	font-size: 65px;
+ 	margin: 40px;
+  	letter-spacing: 15px;
+  	font-family: "Lato", sans-serif;
+}
 .accent, .links a:hover {
 	color: lightblue;
 	font-weight: bold;
-  font-size: 1.25em;
+  	font-size: 1.25em;
 }
 .links a{
-  color: black;
+  	color: black;
+  	font-family: 'Raleway', sans-serif;
+  	font-transform:;
 }
 a {
-  text-decoration: none;
-
+  	text-decoration: none;
 }
 ul.projects li {
 	display: inline-block;
 	width: 33%;
-  min-width: 18rem;
-  max-width: 21rem;
+  	min-width: 18rem;
+  	max-width: 21rem;
 	margin: 1rem;
 }
 ul.projects {
 	margin: 0px auto;
 	padding: 0px;
 }
-.project{
+.project {
 	width: 100%;
 	padding: 1rem;
-	border: 1px solid black;
-	}
+	box-shadow: 2px 2px 5px grey;
+}
+.box2 .project:hover, .box3 .project:hover {
+	box-shadow: 4px 4px 5px grey;
+}
 .portfolio {
 	width: 100%;
 	padding: 0px 2rem;
@@ -74,12 +89,12 @@ ul.projects {
 	margin-top: 5em;
 	padding: 4em 0;
 	background-color: black;
-  text-align: center;
-  color: #fff;
+  	text-align: center;
+  	color: #fff;
 }
 
 .content-footer > p {
-  color: white;
+  	color: white;
 }
 
 .social {
@@ -90,13 +105,10 @@ ul.projects {
 .social > li {
 	display: inline-block;
 	margin-right: .75em;
-  margin-left: .75em
-}
-.name {
-  font-size: 4rem;
-  margin: -2rem;
+  	margin-left: .75em
 }
 .header {
-  font-size: 2em;
-  margin-top: 4rem;
+  	font-size: 2em;
+  	margin-top: 4rem;
+  	font-weight: 600;
 }
