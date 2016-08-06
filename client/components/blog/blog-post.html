@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 background tpad70">
+		  <h1 class = "intro">Blog</h1>
+		</div>
+	</div>
+	<div class="row tpad70">
+	    <div class="col-md-9">
+    	    <div class="col-md-2 col-md-offset-1">
+    	        <h3>{{ bpc.currentBlogPost.created | date:short }}</h3>
+    	    </div>
+        	<div class="col-md-8">
+        	    <h2>{{ bpc.currentBlogPost.title }}</h2>
+        		<section class="angular-with-newlines">
+        		    {{ bpc.currentBlogPost.content }}
+        		</section>
+        	</div>
+        </div>
+    	<div class="col-md-2 fullHeight">
+            <h4>recent posts</h3>
+            <ul>
+                <li ng-repeat="blogPost in bpc.blog  | orderBy : '-created'"><a ng-href="/blog/{{ blogPost._id }}">{{ blogPost.title }}</a></li>
+            </ul>
+            <a ng-href="/admin/blog-post" type="button" role="button">New blog post</a>
+            <a data-ng-click="bc.showModal()" type="button" role="button" data-animation="am-fade-and-scale" data-placement="center">Sign in</a>
+
+    	</div>
+	</div>
+ </div>

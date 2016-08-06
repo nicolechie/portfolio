@@ -1,0 +1,20 @@
+<section class="row"> 
+	<div class="col-md-4">
+	</div>
+	<div class="col-md-8">
+		
+	<form name="userForm" ng-submit="ac.createUser()">
+		<input type="text" class="form-control pull-left half input-margin" placeholder="first name" name="firstName" ng-model="ac.user.firstName" required>
+		<input type="text" class="form-control pull-right half input-margin" placeholder="last name" name="lastName" ng-model="ac.user.lastName" required>
+		<input type="text" class="form-control input-margin" placeholder="username" name="username" ng-model="ac.user.username" required>
+		<small ng-show="ac.takenUsername" class="bg-danger">This username is taken.</small>
+		<input type="email" class="form-control input-margin" placeholder="email" name="email" ng-model="ac.user.email" required>
+		<small ng-show="ac.takenEmail" class="bg-danger">There is already an account associated with this email.</small>
+		<div class="form-group">	
+			<input type="password" class="form-control" placeholder="password" name="password" ng-model="ac.user.password" required>
+		</div>
+		<button type="submit" class="form-control" class="btn btn-default">Sign me up!</button>
+	</form>
+	
+	</div>
+</section>

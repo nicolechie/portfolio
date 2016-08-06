@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 background tpad70">
+		  <h1 class = "intro">Blog</h1>
+		</div>
+	</div>
+	<div class="row tpad70">
+	    <div class="col-md-9">
+	        <p class="text-center" ng-show="bc.emptyBlog"> I haven't written any blog posts yet. Stay Tuned! </p>
+	        <div class="row" ng-repeat="blogPost in bc.blog | orderBy : '-created'">
+        	    <div class="col-md-2 col-md-offset-1 fullHeight">
+        	        <h3>{{ blogPost.created | date:short }}</h3>
+        	    </div>
+            	<div class="col-md-8 fullHeight">
+            	    <h2>{{ blogPost.title }}</h2>
+            		<section class="angular-with-newlines">
+            		    {{ blogPost.content | limitTo:bc.lineLimit }}...
+            		</section>
+            		<a ng-href="/blog/{{ blogPost._id }}" type="button" role="button" ng-click="bc.getCurrentBlogPost(blogPost)">read more</a>
+            	</div>
+            </div>
+        </div>
+    	<div class="col-md-2 fullHeight">
+            <h4>recent posts</h3>
+            <p class="text-center" ng-show="bc.emptyBlog"> No recent posts </p>
+            <ul>
+                <li ng-repeat="blogPost in bc.blog  | orderBy : '-created'"><a ng-href="/blog/{{ blogPost._id }}" type="button" role="button" ng-click="bc.getCurrentBlogPost(blogPost)">{{ blogPost.title }}</a></li>
+            </ul>
+            <a ng-show="admin" ng-href="/admin/blog-post" type="button" role="button">New blog post</a>
+    	</div>
+	</div>
+  </div>
+</div>
