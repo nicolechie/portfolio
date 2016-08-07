@@ -54,6 +54,7 @@
     		<h4><a href="mailto:nicolechie@mac.com">nicolechie@mac.com</a></h4>
     	</div>
         <div class="col-md-5 col-md-offset-1" ng-controller="ContactFormCtrl as cfc">
+        	<div id="contactSection"></div>
             <form name="contactForm" data-ng-submit="cfc.sendMail()">
               <div class="form-group">
                 <label for="name">Name</label>
@@ -69,7 +70,6 @@
               </div>
               <button type="submit" class="btn btn-primary">Send</button>
             </form>
-            <p ng-show="cfc.sent">Message Sent!</p>
         </div>
     </div>
 </div>

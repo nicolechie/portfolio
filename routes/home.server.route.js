@@ -1,10 +1,9 @@
 var nodemailer = require('nodemailer');
-// var transporter = nodemailer.createTransport();
 var transporter = nodemailer.createTransport({
-     service: 'iCloud',
+     service: 'gmail',
      auth: {
-        user: "nicolechie@mac.com",
-        pass: "taioRu26"
+        user: "nicolechie.wagner@gmail.com",
+        pass: "taBasco!5"
      }
 });
 
@@ -34,7 +33,7 @@ app.post('/contact-form', jsonParser, function(req, res) {
  
         transporter.sendMail({
             from: data.contactEmail,
-            to: 'nicolechie@mac.com',
+            to: 'nicolechie.wagner@gmail.com',
             subject: 'Message from ' + data.contactName,
             text: data.contactMsg
         });

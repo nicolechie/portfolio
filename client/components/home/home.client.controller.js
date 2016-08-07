@@ -1,4 +1,4 @@
-var app = angular.module('pApp.home', ['mgcrea.ngStrap', 'ngAnimate', 'mgcrea.ngStrap.modal', 'ngMaterial', 'ngAria']);
+var app = angular.module('pApp.home', ['mgcrea.ngStrap', 'ngAnimate', 'mgcrea.ngStrap.modal', 'mgcrea.ngStrap.alert']);
 app.controller('HomeCtrl', ['$scope', function($scope){
 	var self = this;
     

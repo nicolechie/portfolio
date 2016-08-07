@@ -1,26 +1,14 @@
 var app = angular.module('pApp.home');
 
-app.controller('ContactFormCtrl', ['$scope', '$http', '$mdToast', '$animate', function($scope, $http, $mdToast, $animate) {
+app.controller('ContactFormCtrl', ['$scope', '$http', '$alert', '$modal', '$sce', function($scope, $http, $alert, $modal, $sce) {
 
 // Expose view variables
 var self = this;
-        
+
+var myAlert = $alert({title: 'Message Sent', content: 'Your message has been sent!', placement: 'top', type: 'info', container: '#contactSection', duration: '3', show: false});
+self.myAlert = myAlert;
+
         self.sent = false;
-        
-        self.toastPosition = {
-            bottom: true,
-            top: false,
-            left: false,
-            right: true
-        };
-        
-        self.getToastPosition = function () {
-            return Object.keys(self.toastPosition)
-                .filter(function (pos) {
-                    return self.toastPosition[pos];
-                })
-                .join(' ');
-        };
  
         self.sendMail = function () {
  
@@ -41,12 +29,7 @@ var self = this;
                     self.contactName = '';
                     self.contactEmail = '';
                     self.contactMsg = '';
-                    $mdToast.show(
-                        $mdToast.simple()
-                            .content('Thanks for your message ' + data.contactName + ' You Rock!')
-                            .position(self.getToastPosition())
-                            .hideDelay(5000)
-                    );
+                    self.myAlert.show();
                 }).
                 error(function(data, status, headers, config) {
                     // called asynchronously if an error occurs
