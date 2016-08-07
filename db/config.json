@@ -1,0 +1,11 @@
+{
+    "production": {
+        "url": "mongodb://nicolechie:rukka2016@ds147995.mlab.com:47995/portfolio"
+    },
+    "test": {
+        "url": "mongodb://localhost:27017/portfolio-test"
+    },
+    "development": {
+        "url": "mongodb://localhost:27017/portfolio-dev"
+    }
+}

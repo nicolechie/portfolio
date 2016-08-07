@@ -5,17 +5,19 @@
                 <button type="button" class="close" ng-click="$hide()">&times;</button>
                 <h4 class="modal-title">{{ pc.project.name }}</h4>
             </div>
-            <div class="modal-body row">
+            <div class="modal-body text-center row aligner">
                 <div class="col-md-8">
                     <img class="img-responsive" src="{{ pc.project.image }}" />
                 </div>
-                <div class="col-md-4">
-                    <ul ng-repeat="skill in pc.project.skillset">
-                        <li>{{ skill }}</li>
-                    </ul>
-                    <a type="button" class="btn btn-primary btn-sm" href="{{ pc.project.github }}" target="_blank" ng-show="pc.project.github !==''"><i class="fa fa-github" aria-hidden="true"></i> View Github </a>
-                    <a type="button" class="btn btn-primary btn-sm" href="{{ pc.project.link }}" target="_blank">View Project</a>
+                <div class="col-md-4 aligner-item">
+                    <div class="text-center">
+                        <span ng-repeat="skill in pc.project.skillset" class="skill">{{ skill }}</span>
+                    </div>
                 </div>
+            </div>
+            <div class="text-center bmargin15">
+                <a type="button" class="btn btn-primary btn-sm" href="{{ pc.project.github }}" target="_blank" ng-show="pc.project.github !==''"><i class="fa fa-github" aria-hidden="true"></i> View Github </a>
+                <a type="button" class="btn btn-primary btn-sm" href="{{ pc.project.link }}" target="_blank" ng-show="pc.project.link !==''">View Website</a>
             </div>
             <div class="modal-footer">
             </div>

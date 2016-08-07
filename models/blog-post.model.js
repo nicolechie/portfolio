@@ -27,8 +27,6 @@ var BlogPostSchema = new Schema({
   }
 });
 
-// mongoose.model('BlogPost', BlogPostSchema);
-
 var BlogPost = mongoose.model('BlogPost', BlogPostSchema);
 
 module.exports = BlogPost;

@@ -21,6 +21,7 @@ body {
 .links {
 	text-transform: uppercase;
 }
+
 .shadow {
 	box-shadow: 1px 1px 4px #999;
 }
@@ -44,11 +45,15 @@ body {
   background-color: black;
 }
 
-.accent, .links a:hover {
-	color: lightblue;
-	font-weight: bold;
-  font-size: 1.25em;
+a:hover {
+  text-decoration: none !important;
 }
+
+/*.accent, .links a:hover {*/
+/*	color: #f7484e;*/
+	/*font-weight: bold;*/
+  /*font-size: 1.25em;*/
+/*}*/
 
 .links a{
   color: black;
@@ -58,6 +63,10 @@ a {
   text-decoration: none;
 }
 
+/*a:hover {*/
+/*  color: #f7484e !important;*/
+/*}*/
+
 ul.projects li {
 	display: inline-block;
 	width: 33%;
@@ -65,10 +74,12 @@ ul.projects li {
   max-width: 21rem;
 	margin: 1rem;
 }
+
 ul.projects {
 	margin: 0px auto;
 	padding: 0px;
 }
+
 .project{
 	width: 100%;
 }
@@ -150,6 +161,7 @@ ul.projects {
 .angular-with-newlines {
     white-space: pre-wrap;
 }
+
 .fade {
   opacity: .5;
 }
@@ -180,7 +192,6 @@ ul.projects {
 }
 
 .categories button, .categories a {
-    /*cursor: pointer;*/
     color: #eee;
     font-size: 12px;
     letter-spacing: 1px;
@@ -192,6 +203,10 @@ ul.projects {
     border-radius: 2px;
     background: #2E3138;
 }
+
+/*.categories button:focus, .categories button:active {*/
+/*  background-color: #f7484e !important;*/
+/*}*/
 
 .image-container {
     position: relative;
@@ -224,4 +239,51 @@ ul.projects {
 
 .input-margin {
   margin-bottom: 8px;
+}
+
+.skill {
+    color: #eee;
+    font-size: 10px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin: 1px;
+    text-transform: uppercase;
+    padding: 8px 10px;
+    border-radius: 2px;
+    background: #2E3138;
+    display: inline-block;
+}
+
+.noBullets {
+  list-style: none;
+}
+
+.middle {
+  display : flex;
+  align-items : center;
+  height: 100%;
+}
+
+.main {
+    display: table;
+}
+
+.inner {
+    border: 1px solid #000000;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aligner-item {
+  max-width: 50%;
+}
+
+.bmargin15 {
+  margin-bottom: 15px;
 }

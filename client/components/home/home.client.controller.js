@@ -1,5 +1,5 @@
 var app = angular.module('pApp.home', ['mgcrea.ngStrap', 'ngAnimate', 'mgcrea.ngStrap.modal', 'ngMaterial', 'ngAria']);
-app.controller('HomeCtrl', ['$scope', '$modal', '$http', 'blogData', '$location', function($scope, $modal, $http, blogData, $location){
+app.controller('HomeCtrl', ['$scope', function($scope){
 	var self = this;
     
     self.web = true;

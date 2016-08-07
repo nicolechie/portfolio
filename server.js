@@ -1,68 +1,39 @@
-// // var mongoose = require('mongoose');
-// // var express = require('express');
-// // var bodyParser = require('body-parser');
-// // var app = express();
-
-
-// //   app.use(express.static(__dirname + '/client'));
-
-// //   app.use(bodyParser.json());
-
-// // // require('./routes/user.js')(app, passport);
-// // // require('./routes/codefile.js')(app, passport);
-
-// // var http = require('http');
-
-// // var server = http.Server(app);
-
-// // mongoose.connect('mongodb://localhost/auth').then(function() {
-// //     server.listen(8080 || process.env.PORT);
-// // });
-
-// // exports.app = app;
-
+// require('./db/connect');
 // var express = require('express');
 // var bodyParser = require('body-parser');
-// var mongoose = require('mongoose');
-
-// var config = require('./config');
-
+// // var itemRoutes = require('./routes/item');
+// var passport = require('passport');
 // var app = express();
 
 // app.use(bodyParser.json());
 // app.use(express.static('client'));
 
-// var runServer = function(callback) {
-//     mongoose.connect(config.DATABASE_URL, function(err) {
-//         if (err && callback) {
-//             return callback(err);
-//         }
+//   app.use(bodyParser.urlencoded({ extended: false }));
+//   app.use(bodyParser.json());
+//   app.use(passport.initialize());
 
-//         app.listen(config.PORT, function() {
-//             console.log('Listening on localhost:' + config.PORT);
-//             if (callback) {
-//                 callback();
-//             }
-//         });
-//     });
-// };
+// require('./routes/blog.server.route.js')(app);
+// require('./routes/home.server.route.js')(app);
+// require('./routes/user.server.route.js')(app, passport);
 
-// if (require.main === module) {
-//     runServer(function(err) {
-//         if (err) {
-//             console.error(err);
-//         }
-//     });
-// }
+// app.listen(process.env.PORT || 8080, function() {
+//     console.log('Listening on port 8080');
+// });
 
 // exports.app = app;
-// exports.runServer = runServer;
+
 
 var mongoose = require('mongoose');
 var express = require('express');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var app = express();
+
+//Set default NODE_ENV and MONGO LINK 
+if (!process.env.NODE_ENV) { 
+    process.env.NODE_ENV = 'development';
+    process.env.MONGODB_NW = 'mongodb://nicolechie:rukka2016@ds147995.mlab.com:47995/portfolio';
+}
 
   app.use(express.static(__dirname + '/client'));
   app.use(bodyParser.urlencoded({ extended: false }));
@@ -73,12 +44,16 @@ require('./routes/blog.server.route.js')(app);
 require('./routes/home.server.route.js')(app);
 require('./routes/user.server.route.js')(app, passport);
 
-var http = require('http');
+// mongoose.connect('mongodb://nicolechie:rukka2016@ds147995.mlab.com:47995/portfolio').then(function() {
+//     app.listen(process.env.PORT || 8080 );
+// });
 
-var server = http.Server(app);
-
-mongoose.connect('mongodb://localhost/auth').then(function() {
-    server.listen(8080 || process.env.PORT);
+mongoose.connect(process.env.MONGODB_NW).then(function(err) {
+    if (err) {
+        console.log("error", err);
+    }
+   app.listen(process.env.PORT || 8080);
+    console.log("connected", process.env.PORT);
 });
 
 exports.app = app;

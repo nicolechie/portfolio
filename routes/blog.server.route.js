@@ -1,26 +1,17 @@
-'use strict';
-
-/**
- * Module dependencies
- */
 var BlogPost = require('../models/blog-post.model.js');
-var blog = require('../controllers/blog.server.controller');
-//   var bodyParser = require('body-parser');
-//   var jsonParser = bodyParser.json();
-// var mongoose = require('mongoose');
-// var BlogPost = mongoose.model('BlogPost');
+var blog = require('../controllers/blog.server.controller.js');
 
 module.exports = function(app) {
     var bodyParser = require('body-parser');
     var jsonParser = bodyParser.json();
     
-        app.get('/api/blog', jsonParser, function(req, res) {
-        blog.list(function(blogPost) {
-            res.json(blogPost);
-        }, function(err) {
-            res.status(400).json(err);
-        });
+app.get('/api/blog', jsonParser, function(req, res) {
+    blog.list(function(blogPost) {
+        res.json(blogPost);
+    }, function(err) {
+        res.status(400).json(err);
     });
+});
     
 app.post('/api/blog', jsonParser, function(req, res) {
         if (!req.body) {
@@ -48,20 +39,47 @@ app.post('/api/blog', jsonParser, function(req, res) {
         });
 
     });
+    
+    app.delete('/api/blog/:id', function(req, res) {
+        BlogPost.remove({
+            _id: req.params.id
+		}, function(err, post){
+			if(err) {
+			    return res.send(err);
+			}
+			res.json({ message: 'Post deleted!' });
+        });
 
-// module.exports = function (app) {
-//   // Blog collection routes
-//   app.route('/api/blog', jsonParser)
-//     .get(blog.list)
-//     .post(blog.create);
+    });
+    
+    app.put('/api/blog/:id', jsonParser,  function(req, res) {
+        blog.edit(req.body, function(blogPost) {
+            res.status(201).json(blogPost);
+                console.log("BlogPost", blogPost);
+        }, function(err) {
+            res.status(400).json(err);
+        });
+    });
 
-//   // Single article routes
-//   app.route('/api/blog/:blogPostId')
-//     .get(blog.read)
-//     .put(blog.update)
-//     .delete(blog.delete);
+// app.delete('/api/blog/:id', function(req, res) {
+//         if (!req.body) {
+//             return res.status(400).json({
+//                 message: "No request body"
+//             });
+//         }
+//         console.log("req", req);
 
-//   // Finish by binding the article middleware
-//   app.param('blogPostId', blog.blogPostByID);
-// };
+//         blog.destroy(req.params.id, function(err) {
+//             if (err) {
+//                 console.log(err);
+//                 return res.status(500).json({
+//                     message: 'Internal server error'
+//                 });
+//             }
+
+//             return res.status(201).json("success");
+//         });
+
+//     });
+
 };

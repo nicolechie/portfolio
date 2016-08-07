@@ -92,22 +92,6 @@ app.controller('AdminCtrl', ['$scope', '$http', '$location', '$modal', 'UserInfo
         });
     };
     
-    // New blog post
-
-    self.blogPost = {};
-    self.newPost = function() {
-        $http.post('/api/blog', self.blogPost)
-        .then(function (response) {
-            self.blogPost = response.data;
-            console.log(response.data);
-            // Redirect to blog page
-            // $location.path('/blog');
-        }, function (response) {
-            // If error, display error message
-            console.log(response);
-            console.log("Error");
-        });
-    };
 }]);
 
 app.factory('UserInfo', function () {
@@ -122,14 +106,14 @@ app.factory('UserInfo', function () {
     };
 });
 
-// app.factory('Blog', function () {
-//     var blog = {};
-//     return {
-//         setData: function (data) {
-//             blog = data;
-//         },
-//         getData: function () {
-//             return blog;
-//         }
-//     };
-// });
+app.factory('Blog', function () {
+    var blog = {};
+    return {
+        setData: function (data) {
+            blog = data;
+        },
+        getData: function () {
+            return blog;
+        }
+    };
+});

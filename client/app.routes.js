@@ -26,7 +26,11 @@ app
         })
         .when('/admin/blog-post', {
             templateUrl : './components/admin/blog-post.html',
-            controller : 'AdminCtrl as ac'
+            controller : 'AdminBlogPostCtrl as abc'
+        })
+        .when('/admin/:blogPostId/edit', {
+            templateUrl : './components/admin/blog-post.html',
+            controller : 'AdminBlogPostCtrl as abc'
         })
 		.otherwise({
     		redirectTo : '/'

@@ -3,7 +3,7 @@
   	    <div class="col-md-12 introduction fullHeight text-center tpad70">
 		  <img src="./images/ncwlogo-white.svg" alt="Nicole Logo" width="300">
 		  <h1 class="intro">nicole chie wagner</h1>
-			<p class="intro-subtext">I'm a <span class = "accent">web developer</span>.</p>
+			<p class="intro-subtext">I'm a <span class="text-primary">web developer</span>.</p>
 		</div>
 	</div>
 	<a id="projects"></a>
@@ -12,8 +12,8 @@
 		<div class="col-md-10 col-md-offset-1">
 					
 			<h2 class="header text-center">projects</h2>
-			<div class="categories">
-				<a type="button" class="btn btn-primary btn-sm" ng-click="hc.showAllCategories()">All</a>
+			<div class="categories bmargin15">
+				<button type="button" class="btn btn-primary btn-sm" ng-click="hc.showAllCategories()">All</button>
 				<button type="button" class="btn btn-primary btn-sm" ng-click="hc.showWeb()">Web Development</button>
 				<button type="button" class="btn btn-primary btn-sm" ng-click="hc.showGraphic()">Graphic Design</button>
 			</div>
@@ -23,8 +23,8 @@
 					<div class="col-sm-6 col-md-4 projectPad" ng-show="{{ project.category }}">
 						<div class="image-container" >
 						    <img class="img-responsive" src="{{ project.thumb }}" />
-						    <div class="after">
-						    	<span class="content">
+						    <div class="after aligner">
+						    	<span class="content aligner-item">
 						    	<a type="button" href="{{ project.link }}" target="_blank"><i class="fa fa-link fa-3x" aria-hidden="true"></i></a>
 						    	
 						    	<a data-ng-click="pc.showModal(project)" type="button" role="button" data-animation="am-fade-and-scale" data-placement="center"><i class="fa fa-search fa-3x" aria-hidden="true"></i></a>
@@ -54,7 +54,7 @@
               		<label for="message">Message</label>
                   <textarea class="form-control" rows="6" ng-model="cfc.contactMsg"></textarea>
               </div>
-              <button type="submit" class="form-control" class="btn btn-default">Send</button>
+              <button type="submit" class="form-control btn btn-primary">Send</button>
             </form>
         </div>
     </div>

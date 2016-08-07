@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
                 <opt-in ng-hide="ac.signedUp"></opt-in>
-                <p ng-show="ac.signedUp">Hi {{ ac.user.username }}! Thanks for signing up with design helper.</p>
+                <p ng-show="ac.signedUp">New user created.</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" ng-click="$hide()"><span ng-hide="ac.signedUp">No thanks</span><span ng-show="ac.signedUp">Okay</span></button>

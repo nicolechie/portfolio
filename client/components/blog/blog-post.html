@@ -11,19 +11,13 @@
     	    </div>
         	<div class="col-md-8">
         	    <h2>{{ bpc.currentBlogPost.title }}</h2>
+        	    <button class="btn btn-default btn-xs" ng-show="bpc.admin" ng-click="bpc.deleteBlogPost()" type="button" role="button">delete</button>
+        	    <a class="btn btn-default btn-xs" ng-show="bpc.admin" href="/admin/{{ bpc.currentBlogPost._id }}/edit" type="button" role="button">edit</a>
         		<section class="angular-with-newlines">
         		    {{ bpc.currentBlogPost.content }}
         		</section>
         	</div>
         </div>
-    	<div class="col-md-2 fullHeight">
-            <h4>recent posts</h3>
-            <ul>
-                <li ng-repeat="blogPost in bpc.blog  | orderBy : '-created'"><a ng-href="/blog/{{ blogPost._id }}">{{ blogPost.title }}</a></li>
-            </ul>
-            <a ng-href="/admin/blog-post" type="button" role="button">New blog post</a>
-            <a data-ng-click="bc.showModal()" type="button" role="button" data-animation="am-fade-and-scale" data-placement="center">Sign in</a>
-
-    	</div>
+        <blog-sidebar ng-controller="BlogCtrl as bc"></blog-sidebar>
 	</div>
  </div>

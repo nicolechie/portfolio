@@ -24,7 +24,7 @@ app.controller('PortfolioCtrl', ['$scope', '$modal', '$http', function($scope, $
         {
             name: 'Design Helper App',
             thumb: 'images/web/thumb/designhelper.png',
-            image: 'images/web/design-helper_full.png',
+            image: 'images/web/design-helper_fullsm.png',
             link: 'https://limitless-gorge-94190.herokuapp.com/',
             github: 'https://github.com/nicolechie/design-helper',
             category: 'hc.web',
@@ -33,7 +33,7 @@ app.controller('PortfolioCtrl', ['$scope', '$modal', '$http', function($scope, $
         {
             name: 'College Avenue Layouts',
             thumb: 'images/design/thumb/ca.jpg',
-            image: 'images/design/mjbrochure.png',
+            image: 'images/design/ca6.png',
             link: '',
             github: '',
             category: 'hc.graphic',

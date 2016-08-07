@@ -1,9 +1,18 @@
 var app = angular.module('pApp.blog', ['mgcrea.ngStrap', 'ngAnimate', 'mgcrea.ngStrap.modal']);
-app.controller('BlogCtrl', ['$scope', '$modal', '$http', 'blogData', '$location', function($scope, $modal, $http, blogData, $location){
+app.controller('BlogCtrl', ['$scope', '$modal', '$http', 'BlogData', '$location', 'UserInfo', function($scope, $modal, $http, BlogData, $location, UserInfo){
 	var self = this;
     
     self.lineLimit = 500;
     var blog = [];
+    
+    var user = UserInfo.getData();
+    if (user.role === 'admin') {
+        self.admin = true;
+        console.log(self.admin);
+    }
+    else {
+       self.admin = false; 
+    }
     
     // Get blog posts and push them blog
     var getBlogPosts = function() {
@@ -15,7 +24,7 @@ app.controller('BlogCtrl', ['$scope', '$modal', '$http', 'blogData', '$location'
                 response.data.forEach(function(blogPost) {
                     blog.push(blogPost);
                 });
-                blogData.setData(blog);
+                BlogData.setData(blog);
             }
             else {
                 self.emptyBlog = true;
@@ -31,14 +40,21 @@ app.controller('BlogCtrl', ['$scope', '$modal', '$http', 'blogData', '$location'
     
 }]);
 
-app.factory('blogData', function () {
+app.factory('BlogData', function () {
     var blogData = {};
+    var currentBlogData = {};
     return {
         setData: function (data) {
             blogData = data;
         },
         getData: function () {
             return blogData;
+        },
+        setCurrentBlog: function(data) {
+            currentBlogData = data;
+        },
+        getCurrentBlog: function() {
+            return currentBlogData;
         }
     };
 });

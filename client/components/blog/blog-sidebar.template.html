@@ -1,0 +1,10 @@
+<div class="col-md-2 fullHeight">
+    <h4>recent posts</h3>
+    <p class="text-center" ng-show="bc.emptyBlog"> No recent posts </p>
+    <ul class="noBullets">
+        <li ng-repeat="blogPost in bc.blog  | orderBy : '-created'">
+            <a ng-href="/blog/{{ blogPost._id }}" type="button" role="button" ng-click="bc.getCurrentBlogPost(blogPost)">{{ blogPost.title }}</a>
+        </li>
+    </ul>
+    <a ng-show="admin=true" ng-href="/admin/blog-post" type="button" role="button">New blog post</a>
+</div>

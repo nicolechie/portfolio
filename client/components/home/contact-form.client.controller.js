@@ -20,12 +20,12 @@ var self = this;
                 .join(' ');
         };
  
-        this.sendMail = function () {
+        self.sendMail = function () {
  
             var data = ({
-                contactName : this.contactName,
-                contactEmail : this.contactEmail,
-                contactMsg : this.contactMsg
+                contactName : self.contactName,
+                contactEmail : self.contactEmail,
+                contactMsg : self.contactMsg
             });
  
             // Simple POST request example (passing data) :
@@ -34,6 +34,7 @@ var self = this;
                     // this callback will be called asynchronously
                     // when the response is available
                     console.log("success!");
+                    console.log(data.contactName);
                     $mdToast.show(
                         $mdToast.simple()
                             .content('Thanks for your message ' + data.contactName + ' You Rock!')
@@ -46,7 +47,6 @@ var self = this;
                     // or server returns response with an error status.
                     console.log("error", data, status, headers, config);
                 });
- 
         };
     }
 ]);
