@@ -88,8 +88,8 @@ app.controller('PortfolioCtrl', ['$scope', '$modal', '$http', function($scope, $
             name: 'My Portfolio',
             thumb: 'images/web/thumb/portfolio.png',
             image: 'images/web/portfolio_full.png',
-            link: '/',
-            github: '',
+            link: 'https://nicolechie.herokuapp.com/',
+            github: 'https://github.com/nicolechie/portfolio',
             category: 'hc.web',
             skillset: ['HTML5', 'CSS3', 'Bootstrap', 'AngularStrap', 'AngularJS', 'NodeJS', 'MongoDB/Mongoose', 'Express']
         }

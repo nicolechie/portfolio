@@ -1,17 +1,22 @@
 <div class="container-fluid">
     <div class="row">
   	    <div class="col-md-12 introduction fullHeight text-center tpad70">
-		  <img src="./images/ncwlogo-white.svg" alt="Nicole Logo" width="300">
-		  <h1 class="intro">nicole chie wagner</h1>
+		  	<img src="./images/ncwlogo-white.svg" alt="Nicole Logo" width="300">
+		  	<h1 class="intro">nicole chie wagner</h1>
 			<p class="intro-subtext">I'm a <span class="text-primary">web developer</span>.</p>
 		</div>
 	</div>
-	<a id="projects"></a>
-	<div class="container-fluid pad45">
-		
+	
+	<div class="row">
+		<a id="projects"></a>
+  		<div class="col-md-12 bg-primary tpad70">
+	  		<h1 class="intro">Projects</h1>
+		</div>
+	</div>
+	<div class="row section-margin">	
 		<div class="col-md-10 col-md-offset-1">
 					
-			<h2 class="header text-center">projects</h2>
+			<!--<h2 class="header text-center">projects</h2>-->
 			<div class="categories bmargin15">
 				<button type="button" class="btn btn-primary btn-sm" ng-click="hc.showAllCategories()">All</button>
 				<button type="button" class="btn btn-primary btn-sm" ng-click="hc.showWeb()">Web Development</button>
@@ -19,7 +24,7 @@
 			</div>
 			<div id="grid" ng-controller="PortfolioCtrl as pc">
 				<section class="portfolio" ng-repeat="project in pc.projects">
-
+	
 					<div class="col-sm-6 col-md-4 projectPad" ng-show="{{ project.category }}">
 						<div class="image-container" >
 						    <img class="img-responsive" src="{{ project.thumb }}" />
@@ -37,10 +42,18 @@
 			</div>
 		</div>
 	</div>
-	<a name="contact"></a>
-	<div class="container tpad70">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2" ng-controller="ContactFormCtrl as cfc">
+	<div class="row">
+		<a id="contact"></a>
+  		<div class="col-md-12 background tpad70">
+	  		<h1 class = "intro">Contact</h1>
+		</div>
+	</div>
+    <div class="row section-margin">
+    	<div class="col-md-3 col-md-offset-1 text-center">
+    		<i class="fa fa-envelope-o fa-4x" aria-hidden="true"></i>
+    		<h4>nicolechie@mac.com</h4>
+    	</div>
+        <div class="col-md-5 col-md-offset-1" ng-controller="ContactFormCtrl as cfc">
             <form name="contactForm" data-ng-submit="cfc.sendMail()">
               <div class="form-group">
                 <label for="name">Name</label>
@@ -54,10 +67,9 @@
               		<label for="message">Message</label>
                   <textarea class="form-control" rows="6" ng-model="cfc.contactMsg"></textarea>
               </div>
-              <button type="submit" class="form-control btn btn-primary">Send</button>
+              <button type="submit" class="btn btn-primary">Send</button>
             </form>
         </div>
     </div>
 </div>
 	
-</div>
