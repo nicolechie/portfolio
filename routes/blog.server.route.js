@@ -61,25 +61,4 @@ app.post('/api/blog', jsonParser, function(req, res) {
         });
     });
 
-// app.delete('/api/blog/:id', function(req, res) {
-//         if (!req.body) {
-//             return res.status(400).json({
-//                 message: "No request body"
-//             });
-//         }
-//         console.log("req", req);
-
-//         blog.destroy(req.params.id, function(err) {
-//             if (err) {
-//                 console.log(err);
-//                 return res.status(500).json({
-//                     message: 'Internal server error'
-//                 });
-//             }
-
-//             return res.status(201).json("success");
-//         });
-
-//     });
-
 };

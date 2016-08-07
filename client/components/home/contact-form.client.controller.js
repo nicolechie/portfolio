@@ -4,7 +4,9 @@ app.controller('ContactFormCtrl', ['$scope', '$http', '$mdToast', '$animate', fu
 
 // Expose view variables
 var self = this;
- 
+        
+        self.sent = false;
+        
         self.toastPosition = {
             bottom: true,
             top: false,
@@ -35,6 +37,10 @@ var self = this;
                     // when the response is available
                     console.log("success!");
                     console.log(data.contactName);
+                    self.sent = true;
+                    self.contactName = '';
+                    self.contactEmail = '';
+                    self.contactMsg = '';
                     $mdToast.show(
                         $mdToast.simple()
                             .content('Thanks for your message ' + data.contactName + ' You Rock!')
