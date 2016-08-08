@@ -296,5 +296,8 @@ ul.projects {
     margin-bottom: 5em;
   }
   
+  .fullHeight {
+	height: auto;
+  }
 
 }

@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-  	    <div class="col-md-12 introduction text-center tpad70">
+  	    <div class="col-md-12 introduction fullHeight text-center tpad70">
 		  	<img class="img-responsive center-block" src="./images/ncwlogo-white.svg" alt="Nicole Logo" width="300">
 		  	<h1 class="intro">nicole chie wagner</h1>
 			<p class="intro-subtext">I'm a <span class="text-primary">web developer</span>.</p>
@@ -29,7 +29,7 @@
 						    <img class="img-responsive" src="{{ project.thumb }}" />
 						    <div class="after aligner">
 						    	<span class="content aligner-item">
-						    	<a type="button" href="{{ project.link }}" target="_blank"><i class="fa fa-link fa-3x" aria-hidden="true"></i></a>
+						    	<a ng-show="{{ project.category }} !== 'web'" type="button" href="{{ project.link }}" target="_blank"><i class="fa fa-link fa-3x" aria-hidden="true"></i></a>
 						    	
 						    	<a data-ng-click="pc.showModal(project)" type="button" role="button" data-animation="am-fade-and-scale" data-placement="center"><i class="fa fa-search fa-3x" aria-hidden="true"></i></a>
 						    	</span>
