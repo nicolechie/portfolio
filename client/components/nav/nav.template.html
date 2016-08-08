@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavCtrl as nc">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-click="nc.isCollapsed = !nc.isCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="./images/ncwlogo-black.svg" alt="Nicole Logo" width="40"></a>
+        </div>
+        
+        <div uib-collapse="nc.isCollapsed" class="navbar-collapse bs-js-navbar-collapse">
+            <ul class="nav navbar-nav navbar-right links">
+                <li id="fat-menu">
+                    <a href="#projects" target="_self">projects</a>
+                </li>
+                <li id="fat-menu">
+                    <a href="#contact" target="_self">contact</a>
+                </li>
+                <li id="fat-menu">
+                    <a href="/blog">blog</a>
+                </li>
+            </ul>
+        </div><!-- /.nav-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
