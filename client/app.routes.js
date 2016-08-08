@@ -1,4 +1,4 @@
-var app = angular.module('pApp', ['ngRoute', 'pApp.blog', 'pApp.admin', 'pApp.home']);
+var app = angular.module('pApp', ['ngRoute', 'pApp.blog', 'pApp.admin', 'pApp.home', 'ui.bootstrap']);
 
 app
 	.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
