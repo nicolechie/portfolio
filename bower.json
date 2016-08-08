@@ -9,9 +9,8 @@
   "homepage": "https://github.com/nicolechie/portfolio",
   "private": true,
   "ignore": [
-    "**/.*",
     "node_modules",
-    "bower_components",
+    "client/bower_components",
     "test",
     "tests"
   ],
@@ -20,8 +19,6 @@
     "angular": "^1.5.8",
     "angular-route": "^1.5.8",
     "angular-strap": "^2.3.9",
-    "ngAnimate": "*",
-    "angular-animate": "^1.5.8",
-    "angular-material": "^1.0.9"
+    "angular-animate": "^1.5.8"
   }
 }
