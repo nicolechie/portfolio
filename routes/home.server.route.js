@@ -2,10 +2,12 @@ var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
      service: 'gmail',
      auth: {
-        user: "nicolechie.wagner@gmail.com",
-        pass: "taBasco!5"
+        user: process.env.MAIL_USERNAME,
+        pass: process.env.MAIL_PASSWORD
      }
 });
+
+// var transporter = nodemailer.createTransport('smtps://user%40gmail.com:pass@smtp.gmail.com');
 
 // verify connection configuration
 transporter.verify(function(error, success) {
@@ -31,13 +33,21 @@ app.post('/contact-form', jsonParser, function(req, res) {
         
         var data = req.body;
  
-        transporter.sendMail({
+        var mailOptions = {
             from: data.contactEmail,
             to: 'nicolechie.wagner@gmail.com',
             subject: 'Message from ' + data.contactName,
             text: data.contactMsg
+        };
+        
+        transporter.sendMail(mailOptions, function(error, info){
+            if(error){
+                console.log(error);
+                return res.json(error);
+            }
+            console.log('Message sent: ' + info.response);
+            res.json(data);
         });
-     
-        res.json(data);
+        
     });
 };
