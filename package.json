@@ -14,16 +14,14 @@
     "passport-local": "^1.0.0",
     "bower": "1.7.9"
   },
-  
-"scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install"
-},
 
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "bower install"
   },
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nicolechie/portfolio.git"
