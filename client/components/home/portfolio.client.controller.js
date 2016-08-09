@@ -67,7 +67,7 @@ app.controller('PortfolioCtrl', ['$scope', '$modal', '$http', function($scope, $
             name: 'Quiz App',
             thumb: 'images/web/thumb/quiz-app.png',
             image: 'images/web/quiz_full.png',
-            link: 'http://nicolechie.github.io/quiz-app/" ',
+            link: 'http://nicolechie.github.io/quiz-app/',
             github: 'https://github.com/nicolechie/quiz-app',
             category: 'hc.web',
             skillset: ['HTML5', 'CSS3', 'Bootstrap', 'JQuery'],
@@ -104,7 +104,7 @@ app.controller('PortfolioCtrl', ['$scope', '$modal', '$http', function($scope, $
             description: 'The webiste you are currently on! My portfolio showcases my development and design work and also houses a blog.'
         }
     ];
-    
+
     // Brings up the project modal
     self.showModal = function (project) {
         var projectDetailsModal = $modal({ scope: $scope, templateUrl: 'components/home/project-details.template.html', contentTemplate: false, html: true, show: false });

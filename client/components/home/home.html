@@ -27,9 +27,9 @@
 					<div class="col-sm-6 col-md-4 projectPad" ng-show="{{ project.category }}">
 						<div class="image-container" >
 						    <img class="img-responsive" ng-src="{{ project.thumb }}" />
-						    <div class="after aligner">
-						    	<span class="content aligner-item">
-						    	<a ng-show="{{ project.link }}" type="button" href="{{ project.link }}" target="_blank"><i class="fa fa-link fa-3x" aria-hidden="true"></i></a>
+						    <div class="after">
+						    	<span class="content">
+						    	<a ng-show="'{{ project.link }}'" type="button" href="{{ project.link }}" target="_blank"><i class="fa fa-link fa-3x" aria-hidden="true"></i></a>
 						    	<a data-ng-click="pc.showModal(project)" type="button" role="button" data-animation="am-fade-and-scale" data-placement="center"><i class="fa fa-search fa-3x" aria-hidden="true"></i></a>
 						    	</span>
 						    </div>
